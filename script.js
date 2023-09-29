@@ -1,22 +1,22 @@
-// JavaScript for fetching IPv4 and IPv6 addresses and location
+// JavaScript for fetching IP address, location, and ISP
 window.addEventListener('load', () => {
-    // Fetch IPv4 and IPv6 addresses and location using ipinfo.io
+    // Fetch IP address, location, and ISP using ipinfo.io
     fetch('https://ipinfo.io/json')
         .then((response) => response.json())
         .then((data) => {
-            const ipv4Address = data.ip;
-            const ipv6Address = data.ip6 || 'N/A';
+            const ipAddress = data.ip;
             const location = `${data.city}, ${data.region}, ${data.country}`;
+            const isp = data.org || 'N/A';
             
-            document.getElementById('ipv4-address').textContent = ipv4Address;
-            document.getElementById('ipv6-address').textContent = ipv6Address;
+            document.getElementById('ip-address').textContent = ipAddress;
             document.getElementById('location').textContent = location;
+            document.getElementById('isp').textContent = isp;
         })
         .catch((error) => {
-            console.error('Error fetching IP and location data:', error);
-            document.getElementById('ipv4-address').textContent = 'Unable to fetch IPv4 address';
-            document.getElementById('ipv6-address').textContent = 'Unable to fetch IPv6 address';
+            console.error('Error fetching IP, location, and ISP data:', error);
+            document.getElementById('ip-address').textContent = 'Unable to fetch IP address';
             document.getElementById('location').textContent = 'Unable to fetch location';
+            document.getElementById('isp').textContent = 'Unable to fetch ISP';
         });
 });
 
