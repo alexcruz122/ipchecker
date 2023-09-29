@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
+    <title>IP Address & Location</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Snake Game</h1>
+        <h1>IP Address & Location</h1>
         <label class="switch">
             <input type="checkbox" id="dark-mode-toggle">
             <span class="slider round"></span>
         </label>
     </header>
     <main>
-        <div class="game-container">
-            <div id="snake"></div>
-            <div id="food"></div>
+        <div class="info-container">
+            <div>
+                <h2>Your IP Address:</h2>
+                <p id="ip-address">Loading...</p>
+            </div>
+            <div>
+                <h2>Your Location:</h2>
+                <p id="location">Loading...</p>
+            </div>
         </div>
-        <p>Use arrow keys to control the snake. Press "S" to start the game.</p>
     </main>
     <script src="script.js"></script>
 </body>
