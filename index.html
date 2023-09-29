@@ -1,42 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-    <!--PWA requirements-->
-    <meta name="theme-color" content="#9480FF" />
-    <link
-      rel="apple-touch-icon"
-      href="https://cdn.glitch.me/efc5414a-882b-4708-af81-8461abbc1a82%2Ftouch-icon.png?v=1633521972305"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="email.js"></script>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
-    <!-- PWA setup - update public/sw.js if you add your own assets like a new .css file -->
-    <link rel="manifest" href="manifest.json" />
-    <script>
-      if (location.protocol == "http:") location.protocol = "https:";
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("sw.js")
-          .then((reg) => console.log("Service Worker registered", reg))
-          .catch((err) =>
-            console.error("Service Worker **not** registered", err)
-          );
-      } else {
-        console.warn("Service Worker not supported in this browser");
-      }
-    </script>
-    <script type="module" src="scripts/render.js"></script>
-    <!-- templates/head.js will fill in here -->
-  </head>
-  <body>
-    <main>
-      <div class="wrapper">
-        <div id="content" class="content">
-          <!-- scripts/render.js determines what fills in here -->
-        </div>
-      </div>
-    </main>
-  </body>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Send Message">
+    </form>
+</body>
 </html>

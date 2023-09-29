@@ -15,7 +15,7 @@ function sendEmail() {
     const message = document.getElementById('message').value;
 
     // Send the email
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    emailjs.send('service_tr67cd8', 'template_g763fnf', {
         from_name: name,
         from_email: email,
         message: message,
